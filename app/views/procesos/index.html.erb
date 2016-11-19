@@ -1,0 +1,31 @@
+<h1>Listas procesos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Número</th>
+      <th>Clase</th>
+      <th>Acto impugnado</th>
+      <th>Imágen</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @procesos.each do |proceso| %>
+      <tr>
+        <td><%= proceso.name %></td>
+        <td><%= proceso.description %></td>
+        <td><%= proceso.text %></td>
+        <td><%= proceso.picture %></td>
+        <td><%= link_to 'Mostrar', proceso %></td>
+        <td><%= link_to 'Editar', edit_proceso_path(proceso) %></td>
+        <td><%= link_to 'Destruir', proceso, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Proceso', new_proceso_path %>

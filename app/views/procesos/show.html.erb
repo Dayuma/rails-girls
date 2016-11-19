@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @proceso.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @proceso.description %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @proceso.text %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@proceso.picture_url, :width => 100) if @proceso.picture.present? %>
+</p>
+
+<%= link_to 'Edit', edit_proceso_path(@proceso) %> |
+<%= link_to 'Back', procesos_path %>
